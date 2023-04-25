@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ProductInterface } from './interfaces/product.interface';
+import { ApiService } from './services/api.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,15 +10,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'product-frontend';
-  showApprove: boolean = true;
-  showApproved: boolean = false;
 
-  toggleApproved() {
-    this.showApproved = true;
-    this.showApprove = false;
+
+  
+
+  constructor() {}
+
+  ngOnInit(): void {
+  
   }
-  toggleApprove() {
-    this.showApproved = false;
-    this.showApprove = true;
-  }
+
+  
 }

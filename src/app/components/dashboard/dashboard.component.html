@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+<main>
+  <div id="layer">
+    <p (click)="toggleApprove()" [ngClass]="showApprove ? 'underline' : ''">
+      Approve
+    </p>
+    <p (click)="toggleApproved()" [ngClass]="showApproved ? 'underline' : ''">
+      Approved
+    </p>
+  </div>
+  <div id="form">
+    <form class="filter-box">
+      <select name="filter" title="filter">
+        <option value="">Filter By</option>
+        <option value="name">Product Name</option>
+      </select>
+    </form>
+    <form class="search-box">
+      <button type="button"><span class="material-symbols-outlined">search</span></button>
+      <input placeholder="Search product" type="search" name="search" id="search-input" value="">
+    </form>
+  </div>
+  <section>
+  <div id="approve" class="container" [ngClass]="showApprove ? '' : 'hidden'">
+    <table class="table">
+      <tr>
+        <th>DATE</th>
+        <th>PRODUCT NAME</th>
+        <th>SKU</th>
+        <th>CONDITION</th>
+        <th>COST</th>
+        <th>APPROVE</th>
+      </tr>
+      <tr *ngFor="let pendingProduct of pendingProducts">
+        <td>{{formatter(pendingProduct.timestamp)}}</td>
+        <td><span><img src="../../../assets/vitc.png" alt="product icon"/></span>{{pendingProduct.name}}</td>
+        <td>SKU:{{pendingProduct.sku}}</td>
+        <td>{{pendingProduct.condition}}</td>
+        <td>{{pendingProduct.cost}}</td>
+        <td><button type="button" class="approve-button" (click)="approveProduct(pendingProduct)">Approve</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id="approved" class="container" [ngClass]="showApproved ? '' : 'hidden'">
+    <table class="table">
+      <tr>
+        <th>DATE</th>
+        <th>PRODUCT NAME</th>
+        <th>SKU</th>
+        <th>CONDITION</th>
+        <th>COST</th>
+        <th>STATUS</th>
+      </tr>
+      <tr *ngFor="let approvedProduct of approvedProducts">
+        <td>{{approvedProduct.timestamp}}</td>
+        <td>{{approvedProduct.name}}</td>
+        <td>SKU:{{approvedProduct.sku}}</td>
+        <td>{{approvedProduct.condition}}</td>
+        <td>{{approvedProduct.cost}}</td>
+        <td>{{approvedProduct.status}}</td>
+      </tr>
+    </table>
+  </div>
+  </section>
+</main>
+

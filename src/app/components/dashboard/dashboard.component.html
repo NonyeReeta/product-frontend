@@ -52,7 +52,7 @@
         <th>STATUS</th>
       </tr>
       <tr *ngFor="let approvedProduct of approvedProducts">
-        <td>{{approvedProduct.timestamp}}</td>
+        <td>{{formatter(approvedProduct.timestamp)}}</td>
         <td><span><img src="../../../assets/vitc.png" alt="product icon"/></span>{{approvedProduct.name}}</td>
         <td>SKU:{{approvedProduct.sku}}</td>
         <td>{{approvedProduct.condition}}</td>

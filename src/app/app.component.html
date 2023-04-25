@@ -1,3 +1,81 @@
-<section>
-  <h1>Table</h1>
-</section>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0" />
+<main>
+  <div id="layer">
+    <p (click)="toggleApprove()" [ngClass]="showApprove ? 'underline' : ''">
+      Approve
+    </p>
+    <p (click)="toggleApproved()" [ngClass]="showApproved ? 'underline' : ''">
+      Approved
+    </p>
+  </div>
+  <div id="form">
+    <form class="filter-box">
+      <select name="filter" title="filter">
+        <option value="">Filter By</option>
+        <option value="name">Product Name</option>
+      </select>
+    </form>
+    <form class="search-box">
+      <button type="button"><span class="material-symbols-outlined">search</span></button>
+      <input placeholder="Search product" type="search" name="search" id="search-input" value="">
+    </form>
+  </div>
+  <section>
+  <div id="approve" class="container" [ngClass]="showApprove ? '' : 'hidden'">
+    <table class="table">
+      <tr>
+        <th>DATE</th>
+        <th>PRODUCT NAME</th>
+        <th>SKU</th>
+        <th>CONDITION</th>
+        <th>COST</th>
+        <th>APPROVE</th>
+      </tr>
+      <tr>
+        <td>PSUEDO</td>
+        <td>dclass</td>
+        <td>ehtuiwejn</td>
+        <td>ugyued</td>
+        <td>stewe</td>
+        <td><button type="button" class="approve-button">Approve</button></td>
+      </tr>
+    </table>
+  </div>
+  <div id="approved" class="container" [ngClass]="showApproved ? '' : 'hidden'">
+    <table class="table">
+      <tr>
+        <th>DATE</th>
+        <th>PRODUCT NAME</th>
+        <th>SKU</th>
+        <th>CONDITION</th>
+        <th>COST</th>
+        <th>STATUS</th>
+      </tr>
+      <tr>
+        <td>PSUEDO</td>
+        <td>dkghjkfs</td>
+        <td>ehtuiwejn</td>
+        <td>ugyued</td>
+        <td>stewe</td>
+        <td>ewtwae</td>
+      </tr>
+      <tr>
+        <td>PSUEDO</td>
+        <td>dkghjkfs</td>
+        <td>ehtuiwejn</td>
+        <td>ugyued</td>
+        <td>stewe</td>
+        <td>ewtwae</td>
+      </tr>
+      <tr>
+        <td>PSUEDO</td>
+        <td>dkghjkfs</td>
+        <td>ehtuiwejn</td>
+        <td>ugyued</td>
+        <td>stewe</td>
+        <td>ewtwae</td>
+      </tr>
+    </table>
+  </div>
+  </section>
+</main>
